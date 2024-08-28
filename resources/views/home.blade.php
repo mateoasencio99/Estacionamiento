@@ -21,8 +21,6 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <button id="activar">Enviar activo</button>
-                    <button id="desactivar">Enviar inactivo</button>
                     <div class="row mt-2">
                         <div class="col-sm-4 p-2" style="height: 130px">
                             <div class="text-center d-flex align-items-center justify-content-center text-white" id="sensor-div" style="width:100%; height: 100%">
