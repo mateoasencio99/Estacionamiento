@@ -7,10 +7,10 @@ int sensor_Pin = 0, LED_Pin = 2;  // Pin 2 de Arduino conectado a la salida del 
 int D = 0, O = 0, ID = 6;
 bool guardarestado, estadoanterior = false;
 
-#define WIFI_SSID "sele"  // Nombre de la red a conectarse
-#define WIFI_PASSWORD "aqaf1682"           // Contraseña de la red
-//#define WIFI_SSID "Personal-E78"
-//#define WIFI_PASSWORD "COE2953E78"
+#define WIFI_SSID "Utn_Libre Max"  // Nombre de la red a conectarse
+#define WIFI_PASSWORD ""  // Contraseña de la red
+
+
 void conectarWiFi() {
   delay(1000);
   WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
@@ -69,10 +69,10 @@ void enviarEstado(bool estado) {
   // Construye la cadena de datos para el cuerpo del POST
   String postData = "id=" + String(ID) + "&estado=" + String(estado ? "1" : "0");
 
-  if (client.connect("172.29.82.119", 8000)) {
+  if (client.connect("127.0.0.1", 8000)) {
     // Envía la solicitud HTTP POST
     client.println("POST " + url + " HTTP/1.1");
-    client.println("Host: 172.29.82.119");
+    client.println("Host: 127.0.0.1");
     client.println("Content-Type: application/x-www-form-urlencoded");
     client.println("Content-Length: " + String(postData.length()));
     client.println();
